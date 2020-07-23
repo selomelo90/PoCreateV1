@@ -1,6 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form">
-	<Table id="idProductsTable" growing="true" growingThreshold="10" items="{/data}">
+	xmlns:f="sap.ui.layout.form"
+	xmlns:d="sap.ui.model.Type">
+	<Table id="idPoItemsTable" growing="true" growingThreshold="10" items="{/data}">
 		<headerToolbar>
 			<Toolbar>
 				<HBox>
@@ -11,25 +12,25 @@
 		<columns>
 			<Column minScreenWidth="Tablet" width="1em" demandPopin="true" hAlign="Center"></Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Identify"/>
+				<Text text="Kalem No"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Name"/>
+				<Text text="Malzeme"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Surname"/>
+				<Text text="Adet"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Phone"/>
+				<Text text="Ölçü Birimi"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Email"/>
+				<Text text="Birim Fiyat"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="Country"/>
+				<Text text="Üretim Yeri"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
-				<Text text="City"/>
+				<Text text="Depo Adresi"/>
 			</Column>
 			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
 			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
@@ -41,32 +42,32 @@
 						
 					</HBox>
 					<HBox>
-						<Text text="{lId}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lId}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{PoItem}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{PoItem}" type="Number" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lname}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lname}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{Material}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{Material}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lsurname}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lsurname}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{Quantity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{Quantity}" type="Number" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lphone}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lphone}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{Unit}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{Unit}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lemail}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lemail}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{NetPrice}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{NetPrice}"  visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lcountry}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lcountry}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{Plant}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{Plant}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
-						<Text text="{lcity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{lcity}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Text text="{StgeLoc}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{StgeLoc}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<core:Icon src="sap-icon://edit" visible="{path: 'editNew', formatter: '.enableControl'}" press="onEdit"/>
