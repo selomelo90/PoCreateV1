@@ -1,0 +1,83 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form">
+	<Table id="idProductsTable" growing="true" growingThreshold="10" items="{/data}">
+		<headerToolbar>
+			<Toolbar>
+				<HBox>
+					<core:Icon src="sap-icon://add" press="addEntry"/>
+				</HBox>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column minScreenWidth="Tablet" width="1em" demandPopin="true" hAlign="Center"></Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Identify"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Name"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Surname"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Phone"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Email"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="Country"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+				<Text text="City"/>
+			</Column>
+			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
+			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<HBox>
+						
+					</HBox>
+					<HBox>
+						<Text text="{lId}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lId}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lname}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lname}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lsurname}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lsurname}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lphone}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lphone}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lemail}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lemail}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lcountry}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lcountry}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{lcity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{lcity}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<core:Icon src="sap-icon://edit" visible="{path: 'editNew', formatter: '.enableControl'}" press="onEdit"/>
+					</HBox>
+					<HBox>
+						<!--<core:Icon src="sap-icon://add" visible="{path: 'createNew', formatter: '.enableControl'}" press="addEntry"/>-->
+						<core:Icon src="sap-icon://save" visible="{path: 'saveNew', formatter: '.enableControl'}" press="saveEntry"/>
+						<core:Icon src="sap-icon://delete" visible="{path: 'removeNew', formatter: '.enableControl'}" press="removeEntry"/>
+					</HBox>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

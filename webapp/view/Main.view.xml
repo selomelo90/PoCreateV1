@@ -1,0 +1,110 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="PoCreateV1.PoCreateV1.controller.Main"
+ xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Page title="Satınalma Siparişi Yaratma Ekranı" titleAlignment="Center">
+		<content> 
+			<f:SimpleForm id="SimpleFormChangeColumn_oneGroup234"
+					editable="true"
+					layout="ColumnLayout"
+					title="Satın Alma Sipariş Başlık"
+					columnsM="2"
+					columnsL="3"
+					columnsXL="4" 
+					> 
+					<f:content>
+						<Label text="Satın Alma Sipariş Türü" />
+						<Input id="SasTur" />
+						<Label text="Satıcı" />
+						<Input id="Satici" />
+						<Label text="Belge Tarihi" />
+						<DatePicker
+							id="DP1"
+							placeholder="Enter Date ..."
+							change="handleChange"
+							class="sapUiSmallMarginBottom"/>
+				<Label text="DatePicker with OK button in the footer and initialFocusedDateValue new Date(2017, 5, 13)" labelFor="DP8"/>
+				
+					</f:content>
+				</f:SimpleForm>
+				<IconTabBar
+				id="idTabBarHeader"
+				select="handleIconTabBarSelect"
+				class="sapUiResponsiveContentPadding">
+				<items> 
+					<IconTabFilter
+						icon="sap-icon://filter-facets"
+						iconColor="Contrast"
+						count="{/ProductCollectionStats/Counts/Weight/Ok}"
+						text="Organizasyon Verileri"
+						key="Org">
+						<content>
+							<core:Fragment fragmentName="PoCreateV1.PoCreateV1.view.PoHeaderTab" type="XML" />
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator />
+					<IconTabFilter
+						icon="sap-icon://supplier"
+						iconColor="Contrast"
+						count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+						text="Teslimat/Fatura"
+						key="TesFat" >
+						<content>
+							<core:Fragment fragmentName="PoCreateV1.PoCreateV1.view.PoHeaderTab2" type="XML" />
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator />
+					<IconTabFilter
+						icon="sap-icon://customer-order-entry"
+						iconColor="Contrast"
+						count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+						text="Müşteri Verileri"
+						key="MüsVer" >
+						<content>
+							<core:Fragment fragmentName="PoCreateV1.PoCreateV1.view.PoHeaderTab3" type="XML" />
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<Panel expandable="true" headerText="Po Items" width="auto">
+				<headerToolbar>
+					<OverflowToolbar height="3rem" style="Clear">
+						<Title text="Po Items" />
+						<ToolbarSpacer />
+						<Button icon="sap-icon://settings" />
+						<Button icon="sap-icon://drop-down-list" />
+					</OverflowToolbar>
+				</headerToolbar>
+				<content>
+				   <core:Fragment fragmentName="PoCreateV1.PoCreateV1.view.PoItemMaster" type="XML"/>
+				</content>
+			</Panel>
+			<IconTabBar
+				id="idTabBarLine"
+				select="handleIconTabBarSelect"
+				class="sapUiResponsiveContentPadding">
+				<items> 
+					<IconTabFilter
+						icon="sap-icon://begin"
+						iconColor="Positive"
+						count="{/ProductCollectionStats/Counts/Weight/Ok}"
+						text="Ok"
+						key="Ok" />
+					<IconTabSeparator />
+					<IconTabFilter
+						icon="sap-icon://compare"
+						iconColor="Critical"
+						count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+						text="Heavy"
+						key="Heavy" />
+					<IconTabSeparator />
+					<IconTabFilter
+						icon="sap-icon://inventory"
+						iconColor="Negative"
+						count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+						text="Overweight"
+						key="Overweight" />
+				</items>
+			</IconTabBar> 
+			<Button text = "Send" press = "onSend"/>
+		</content>
+	</Page>
+</mvc:View>
