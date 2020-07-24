@@ -47,6 +47,9 @@
 			"async": true,
 			"id": "App"
 		},
+		
+	"handleValidation"  : true,
+		
 		"dependencies": {
 			"minUI5Version": "1.65.6",
 			"libs": {
