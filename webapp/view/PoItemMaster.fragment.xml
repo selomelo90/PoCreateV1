@@ -1,6 +1,5 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:d="sap.ui.model.Type">
+	xmlns:f="sap.ui.layout.form" xmlns:d="sap.ui.model.Type">
 	<Table id="idPoItemsTable" growing="true" growingThreshold="10" items="{/data}">
 		<headerToolbar>
 			<Toolbar>
@@ -38,20 +37,20 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<HBox>
-						
-					</HBox>
+					<HBox></HBox>
 					<HBox>
 						<Text text="{PoItem}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{PoItem}" type="Number" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Input value="{ path : 'PoItem', type:'sap.ui.model.type.Integer', constraints : { minimum: '0', maximum: '99999' } }"
+							visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<Text text="{Material}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{Material}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Input value="{ path:'Material', type:'sap.ui.model.type.String', constraints : { minLength: 10, maxLength: 18 } }"
+							visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<Text text="{Quantity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{Quantity}" type="Number" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Input value="{ path : 'Quantity', type:'sap.ui.model.type.Number'}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<Text text="{Unit}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
@@ -59,7 +58,7 @@
 					</HBox>
 					<HBox>
 						<Text text="{NetPrice}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
-						<Input value="{NetPrice}"  visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+						<Input value="{ path : 'NetPrice', type:'sap.ui.model.type.Float'}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<Text text="{Plant}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
@@ -74,8 +73,8 @@
 					</HBox>
 					<HBox>
 						<!--<core:Icon src="sap-icon://add" visible="{path: 'createNew', formatter: '.enableControl'}" press="addEntry"/>-->
-						<core:Icon src="sap-icon://save" visible="{path: 'saveNew', formatter: '.enableControl'}" press="saveEntry"/>
-						<core:Icon src="sap-icon://delete" visible="{path: 'removeNew', formatter: '.enableControl'}" press="removeEntry"/>
+						<!--<core:Icon src="sap-icon://save" visible="{path: 'saveNew', formatter: '.enableControl'}" press="saveEntry"/>-->
+						<core:Icon src="sap-icon://delete" visible="{path: 'saveNew', formatter: '.enableControl'}" press="removeEntry"/>
 					</HBox>
 				</cells>
 			</ColumnListItem>
