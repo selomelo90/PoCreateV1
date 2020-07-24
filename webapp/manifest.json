@@ -47,9 +47,9 @@
 			"async": true,
 			"id": "App"
 		},
-		
-	"handleValidation"  : true,
-		
+
+		"handleValidation": true,
+
 		"dependencies": {
 			"minUI5Version": "1.65.6",
 			"libs": {
@@ -81,11 +81,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -97,15 +95,13 @@
 				"controlId": "app",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "Main",
-					"pattern": "",
-					"target": [
-						"Main"
-					]
-				}
-			],
+			"routes": [{
+				"name": "Main",
+				"pattern": "",
+				"target": [
+					"Main"
+				]
+			}],
 			"targets": {
 				"TargetApp": {
 					"viewType": "XML",
