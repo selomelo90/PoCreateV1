@@ -17,7 +17,7 @@
 				<Text text="Malzeme"/>
 			</Column>
 			<Column minScreenWidth="Tablet" width="14em" demandPopin="true" hAlign="Begin">
-				<Text text="Malzeme Kısa Metni"/>
+				<Text text="Malzeme Kısa  Metni"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
 				<Text text="Adet"/>
