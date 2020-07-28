@@ -9,12 +9,15 @@
 			</Toolbar>
 		</headerToolbar>
 		<columns>
-			<Column minScreenWidth="Tablet" width="1em" demandPopin="true" hAlign="Center"></Column>
-			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+			<Column minScreenWidth="Tablet" width="1px" demandPopin="true" hAlign="Center"></Column>
+			<Column minScreenWidth="Tablet" width="6em" demandPopin="true" hAlign="Begin">
 				<Text text="Kalem No"/>
 			</Column>
-			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
+			<Column minScreenWidth="Tablet" width="14em" demandPopin="true" hAlign="Begin">
 				<Text text="Malzeme"/>
+			</Column>
+			<Column minScreenWidth="Tablet" width="14em" demandPopin="true" hAlign="Begin">
+				<Text text="Malzeme Kısa Metni"/>
 			</Column>
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
 				<Text text="Adet"/>
@@ -31,8 +34,7 @@
 			<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Begin">
 				<Text text="Depo Adresi"/>
 			</Column>
-			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
-			<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Center"></Column>
+			<!--<Column minScreenWidth="Tablet" width="3em" demandPopin="true" hAlign="Left"></Column>-->
 		</columns>
 		<items>
 			<ColumnListItem>
@@ -47,6 +49,10 @@
 						<Text text="{Material}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
 						<Input value="{ path:'Material', type:'sap.ui.model.type.String', constraints : { minLength: 10, maxLength: 18 } }"
 							visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+					</HBox>
+					<HBox>
+						<Text text="{MAKTX}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+						<Input value="{ path:'MAKTX', type:'sap.ui.model.type.String' }" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
 					</HBox>
 					<HBox>
 						<Text text="{Quantity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>

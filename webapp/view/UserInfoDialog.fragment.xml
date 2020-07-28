@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Products"
+		class="sapUiPopupWithPadding"
+		rememberSelections="true"
+		search="_handleValueHelpSearch"
+		confirm="_handleValueHelpClose"
+		cancel="_handleValueHelpClose"
+		items="{/DocumentTypeSet}">
+		<StandardListItem
+			id="standardListItem"
+			icon="{ProductPicUrl}"
+			iconDensityAware="false"
+			iconInset="false"
+			title="{Bsart}"
+			description="{Batxt}"
+			type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

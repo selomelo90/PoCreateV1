@@ -1,35 +1,15 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc"
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form">
-	
-		<f:SimpleForm id="InvoiceDeliveryTab"
-			editable="true"
-			layout="ColumnLayout"
-		    labelSpanXL="1" 
-			labelSpanL="1"
-			labelSpanM="1" 
-	   		labelSpanS="1" 
-	        adjustLabelSpan="false" 
-			  emptySpanXL="10" 
-			  emptySpanL="10" 
-			  emptySpanM="10" 
-			  emptySpanS="10" 
-			  columnsXL="1"
-			  columnsL="1" 
-			  columnsM="1" 
-			  singleContainerFullSize="false"
-			>
-			<f:content>
-				<Label text="Ödeme Koşulları" />
-				<Input id="OdeKosul" />
-				<Label text="Para Birimi" />
-				<Input id="PB" />
-				<Label text="Döviz Kuru" />
-				<Input id="DovizKur" />
-			</f:content>
-		</f:SimpleForm>
-		
+	<f:SimpleForm id="InvoiceDeliveryTab" editable="true" layout="ColumnLayout" labelSpanXL="1" labelSpanL="1" labelSpanM="1" labelSpanS="1"
+		adjustLabelSpan="false" emptySpanXL="10" emptySpanL="10" emptySpanM="10" emptySpanS="10" columnsXL="1" columnsL="1" columnsM="1"
+		singleContainerFullSize="false">
+		<f:content>
+			<Label text="Ödeme Koşulları"/>
+			<Input id="OdeKosul"/>
+			<Label text="Para Birimi"/>
+			<Input id="PB"/>
+			<Label text="Döviz Kuru"/>
+			<Input id="DovizKur"/>
+		</f:content>
+	</f:SimpleForm>
 </core:FragmentDefinition>

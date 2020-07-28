@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/Filter"
+], function (Controller, Filter) {
 	"use strict";
 	var dummyDataCheck;
 	return Controller.extend("PoCreateV1.PoCreateV1.controller.Main", {
@@ -13,8 +14,49 @@ sap.ui.define([
 		onInit: function () {
 
 		},
+
+		handleValueHelp: function (oEvent) {
+			debugger;
+			var sInputValue = oEvent.getSource().getValue();
+
+			debugger;
+			this.inputId = oEvent.getSource().getId();
+			// create value help dialog
+			if (!this._valueHelpDialog) {
+				this._valueHelpDialog = sap.ui.xmlfragment(
+					"PoCreateV1.PoCreateV1.view.UserInfoDialog",
+					this
+				);
+				this.getView().addDependent(this._valueHelpDialog);
+			}
+
+			// create a filter for the binding
+			this._valueHelpDialog.getBinding("items").filter([new Filter(
+				"Bsart",
+				sap.ui.model.FilterOperator.Contains, sInputValue
+			)]);
+
+			// open value help dialog filtered by the input value
+			this._valueHelpDialog.open(sInputValue);
+		},
+
+		_handleValueHelpSearch: function (evt) {
+			var sValue = evt.getParameter("value");
+			var oFilter = new Filter("Bsart", sap.ui.model.FilterOperator.EQ, sValue);
+			evt.getSource().getBinding("items").filter([oFilter]);
+		},
+
+		_handleValueHelpClose: function (evt) {
+			debugger;
+			var oSelectedItem = evt.getParameter("selectedItem");
+			if (oSelectedItem) {
+				var productInput = this.byId(this.inputId);
+				productInput.setValue(oSelectedItem.getTitle());
+			}
+			evt.getSource().getBinding("items").filter([]);
+		},
 		onSend: function () {
-			
+
 			dummyDataCheck = "";
 			debugger;
 			var oTable = this.getView().byId("idPoItemsTable");
@@ -26,46 +68,46 @@ sap.ui.define([
 			var itemData = [];
 
 			for (var iRowIndex = 0; iRowIndex < aItems.length; iRowIndex++) {
-				var PoItem   = oModel2.getProperty("PoItem", aItems[iRowIndex].getBindingContext());
+				var PoItem = oModel2.getProperty("PoItem", aItems[iRowIndex].getBindingContext());
 				var Material = oModel2.getProperty("Material", aItems[iRowIndex].getBindingContext());
 				var Quantity = oModel2.getProperty("Quantity", aItems[iRowIndex].getBindingContext());
-				var Unit	 = oModel2.getProperty("Unit",     aItems[iRowIndex].getBindingContext());
+				var Unit = oModel2.getProperty("Unit", aItems[iRowIndex].getBindingContext());
 				var NetPrice = oModel2.getProperty("NetPrice", aItems[iRowIndex].getBindingContext());
-				var Plant    = oModel2.getProperty("Plant",    aItems[iRowIndex].getBindingContext());
-				var StgeLoc  = oModel2.getProperty("StgeLoc",  aItems[iRowIndex].getBindingContext());
+				var Plant = oModel2.getProperty("Plant", aItems[iRowIndex].getBindingContext());
+				var StgeLoc = oModel2.getProperty("StgeLoc", aItems[iRowIndex].getBindingContext());
 
 				itemData.push({
-					PoNumber : "1",
-					PoItem   : PoItem,
-					Material : Material,
-					Quantity : Quantity,
-					Unit     : Unit,
-					NetPrice : NetPrice,
-					Plant	 : Plant,
-					StgeLoc  : StgeLoc
+					PoNumber: "1",
+					PoItem: PoItem,
+					Material: Material,
+					Quantity: Quantity,
+					Unit: Unit,
+					NetPrice: NetPrice,
+					Plant: Plant,
+					StgeLoc: StgeLoc
 				});
 			}
 			// Get the values of the header input fields
-			var SasTur     = this.getView().byId("SasTur").getValue();
-			var Satici	   = this.getView().byId("Satici").getValue();
-			var SAORG      = this.getView().byId("SAORG").getValue();
-			var SAGrup     = this.getView().byId("SAGrup").getValue();
+			var SasTur = this.getView().byId("SasTur").getValue();
+			var Satici = this.getView().byId("Satici").getValue();
+			var SAORG = this.getView().byId("SAORG").getValue();
+			var SAGrup = this.getView().byId("SAGrup").getValue();
 			var SirketKodu = this.getView().byId("SirketKodu").getValue();
-			var OdeKosul   = this.getView().byId("OdeKosul").getValue();
-			var PB		   = this.getView().byId("PB").getValue();
-			var DovizKur   = this.getView().byId("DovizKur").getValue();
+			var OdeKosul = this.getView().byId("OdeKosul").getValue();
+			var PB = this.getView().byId("PB").getValue();
+			var DovizKur = this.getView().byId("DovizKur").getValue();
 
 			// Create one emtpy Object
 			var oEntry1 = {};
 
-			oEntry1.PoNumber     = "1";
-			oEntry1.DocType      = SasTur;
-			oEntry1.Vendor       = Satici;
-			oEntry1.PurchOrg     = SAORG;
-			oEntry1.PurGroup     = SAGrup;
-			oEntry1.CompCode     = SirketKodu;
-			oEntry1.PaymentTerm  = OdeKosul;
-			oEntry1.Currency     = PB;
+			oEntry1.PoNumber = "1";
+			oEntry1.DocType = SasTur;
+			oEntry1.Vendor = Satici;
+			oEntry1.PurchOrg = SAORG;
+			oEntry1.PurGroup = SAGrup;
+			oEntry1.CompCode = SirketKodu;
+			oEntry1.PaymentTerm = OdeKosul;
+			oEntry1.Currency = PB;
 			oEntry1.ExchangeRate = DovizKur;
 
 			// Link Pack items to the Pack header

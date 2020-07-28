@@ -1,79 +1,15 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc"
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form">
-	
-		<f:SimpleForm id="SimpleFormChangeColumn_oneGroup235"
-			editable="true"
-			layout="ColumnLayout"
-		    labelSpanXL="1" 
-						  labelSpanL="1"
-						  labelSpanM="1" 
-						  labelSpanS="1" 
-						  adjustLabelSpan="false" 
-						  emptySpanXL="10" 
-						  emptySpanL="10" 
-						  emptySpanM="10" 
-						  emptySpanS="10" 
-						  columnsXL="1"
-						  columnsL="1" 
-						  columnsM="1" 
-						  singleContainerFullSize="false"
-			>
-			<f:content>
-				<Label text="SA Org." />
-				<Input id="SAORG" />
-				<Label text="SA Grubu" />
-				<Input id="SAGrup" />
-				<Label text="Şirket Kodu" />
-				<Input id="SirketKodu" />
-			</f:content>
-		</f:SimpleForm>
-	
-<!--	<l:VerticalLayout>
-					<l:content>
-							<Panel>
-								<headerToolbar>
-									<Toolbar>
-										<Title level="H2" text="Po Create Header Tab" />
-									</Toolbar>
-								</headerToolbar>
-								<FlexBox 
-									alignItems="Center" >
-									<items>
-									<Label text="SA Org." class="sapUiSmallMarginEnd"/>
-										<Input value="" placeholder="Head1" width="auto" class="sapUiSmallMarginEnd">
-											<layoutData>
-												<FlexItemData growFactor="2" />
-											</layoutData>
-										</Input> 
-									</items>
-								</FlexBox>
-								<FlexBox 
-									alignItems="Center">
-									<items>
-									<Label text="SA Grubu" class="sapUiSmallMarginEnd"/>
-										<Input value="" placeholder="Head1" width="auto" class="sapUiSmallMarginEnd">
-											<layoutData>
-												<FlexItemData growFactor="2" />
-											</layoutData>
-										</Input> 
-									</items>
-								</FlexBox>
-								<FlexBox 
-									alignItems="Center">
-									<items>
-									<Label text="Şirket Kodu" class="sapUiSmallMarginEnd"/>
-										<Input value="" placeholder="Head1" width="auto" class="sapUiSmallMarginEnd">
-											<layoutData>
-												<FlexItemData growFactor="2" />
-											</layoutData>
-										</Input> 
-									</items>
-								</FlexBox>
-							</Panel>
-					</l:content>
-				</l:VerticalLayout>-->
+	<f:SimpleForm id="SimpleFormChangeColumn_oneGroup235" editable="true" layout="ColumnLayout" labelSpanXL="1" labelSpanL="1" labelSpanM="1"
+		labelSpanS="1" adjustLabelSpan="false" emptySpanXL="10" emptySpanL="10" emptySpanM="10" emptySpanS="10" columnsXL="1" columnsL="1"
+		columnsM="1" singleContainerFullSize="false">
+		<f:content>
+			<Label text="SA Org."/>
+			<Input id="SAORG"/>
+			<Label text="SA Grubu"/>
+			<Input id="SAGrup"/>
+			<Label text="Şirket Kodu"/>
+			<Input id="SirketKodu"/>
+		</f:content>
+	</f:SimpleForm>
 </core:FragmentDefinition>
